@@ -12,7 +12,7 @@
     <!-- Test elements -->
     <div style="display: none">
       <div id="single">
-        <ul data-bind="foreach: items, selection: { data: selection, single: true, focused: focused, anchor: anchor }" tabindex="-1">
+        <ul data-bind="foreach: items, selection: { data: selection, mode: 'single', focused: focused, anchor: anchor }" tabindex="-1">
           <li data-bind="attr: { id: id }, css: { selected: selected }"></li>
         </ul>
       </div>
@@ -28,7 +28,7 @@
       </div>
 
       <div id="simple">
-        <ul data-bind="foreach: items, selection: { data: selection, simple: true, focused: focused, anchor: anchor }" tabindex="-1">
+        <ul data-bind="foreach: items, selection: { data: selection, mode: 'simple', focused: focused, anchor: anchor }" tabindex="-1">
           <li data-bind="attr: { id: id}, css: { selected: selected, focused: focused }"></li>
         </ul>
       </div>
@@ -50,7 +50,7 @@
       </div>
 
       <div id="dynamicForeach">
-        <ul data-bind="foreach: itemsWrappedInAnObservable(), selection: { data: selection, single: true, focused: focused, anchor: anchor }" tabindex="-1">
+        <ul data-bind="foreach: itemsWrappedInAnObservable(), selection: { data: selection, mode: 'single', focused: focused, anchor: anchor }" tabindex="-1">
           <li data-bind="attr: { id: id }, css: { selected: selected }"></li>
         </ul>
       </div>
