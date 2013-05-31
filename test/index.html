@@ -27,6 +27,12 @@
         <ul data-bind="template: { foreach: items, name: 'items-template' }, selection: { data: selection, focused: focused, anchor: anchor }" tabindex="-1"></ul>
       </div>
 
+      <div id="simple">
+        <ul data-bind="foreach: items, selection: { data: selection, simple: true, focused: focused, anchor: anchor }" tabindex="-1">
+          <li data-bind="attr: { id: id}, css: { selected: selected, focused: focused }"></li>
+        </ul>
+      </div>
+
       <script type="text/html" id="items-template">
         <li data-bind="attr: { id: id }, css: { selected: selected, focused: focused }"></li>
       </script>

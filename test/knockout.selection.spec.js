@@ -66,6 +66,19 @@ describe('Selection', function () {
         });
     });
 
+    describe('in simple selection mode', function () {
+      beforeEach(function () {
+        element = useTestElement('#simple');
+        ko.applyBindings(model, element);
+      });
+
+      describe('with no selection', function () {
+        it('has no elements marked as selected', function () {
+          expect(element).to.have.selectionCount(0);
+        });
+      });
+    });
+
     describe('in single selection mode', function () {
         beforeEach(function () {
             element = useTestElement('#single');
