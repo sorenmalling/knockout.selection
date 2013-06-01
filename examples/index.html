@@ -29,6 +29,13 @@
             </ul>
         </div>
 
+        <div class="simple">
+            <h1>Simple selection</h1>
+            <ul data-bind="foreach: items, selection: { data: selection, mode: 'simple' }" tabindex="-1">
+                <li data-bind="text: text, css: { selected: selected }"></li>
+            </ul>
+        </div>
+
         <div class="multi">
             <h1>Multiple selections</h1>
             <ul data-bind="foreach: items, selection: { data: selection, focused: focused }" tabindex="-1">
@@ -62,7 +69,7 @@
             }
 
             /**
-             * Create a simple selection model that only allows
+             * Create a single selection model that only allows
              * selecting a single item at a time.
              */
             var singleSelection = {
@@ -71,6 +78,17 @@
                 };
 
             ko.applyBindings(singleSelection, window.document.querySelector('.single'));
+
+            /**
+             * Create a simple selection model that allows selecting
+             * multiple items by toggling them.
+             */
+            var simpleSelection = {
+                    items: ko.observableArray(createItems(10)),
+                    selection: ko.observableArray()
+                };
+
+            ko.applyBindings(simpleSelection, window.document.querySelector('.simple'));
 
             /**
              * Allow multiple selections with a focused item.
